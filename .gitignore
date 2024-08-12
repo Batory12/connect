@@ -1,0 +1,11 @@
+ll_env/
+
+# Ignore database files
+*.sqlite3
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+
+# Ignore any other generated files or directories
+__pycache__/
