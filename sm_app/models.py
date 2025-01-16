@@ -12,6 +12,9 @@ class Post(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    likeCount = models.IntegerField(default=0)
+    commentCount = models.IntegerField(default=0)
+    repostCount = models.IntegerField(default=0)
 
 
 class Like(models.Model):

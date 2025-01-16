@@ -11,6 +11,11 @@
        <div class="card-body">
         {{ post.content }}
       </div>
+        <div style = "display: flex; justify-content: space-evenly">
+            <a class= "btn btn-primary" style="text-align: center" href="{% url 'sm_app:like' post.id %}">Like {{ post.likeCount }}</a>
+            <a class= "btn btn-primary"style="text-align: center" href="{% url 'sm_app:comment' post.id %}">Comment {{ post.commentCount }}</a>
+            <a class= "btn btn-primary"style="text-align: center" href="{% url 'sm_app:repost' post.id %}">Repost {{ post.repostCount }}</a>
+        <div/>
     </div>
 {% empty %}
     <h4>Kinda calm in here, follow someone!</h4>

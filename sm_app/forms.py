@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Post, Topic, Entry
+from .models import Post, Topic, Entry, Comment
 
 
 class MultipleFileInput(forms.ClearableFileInput):
@@ -10,6 +10,10 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ['title', 'content']
 
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
 class TopicForm(forms.ModelForm):
     class Meta:
         model = Topic

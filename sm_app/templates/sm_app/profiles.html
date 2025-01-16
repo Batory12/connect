@@ -9,7 +9,7 @@
            <div  class="card-body">
             <p>{{ profile.username }}<p/>
                <b>{{ profile.first_name }} {{ profile.last_name }}</b>
-               <button style='float: right' class="btn btn-primary">Follow</button>
+               <a href="{% url  'sm_app:follow' profile.id %}" style='float: right' class="btn btn-primary">Follow</a>
           </div>
         </div>
  {% endfor %}

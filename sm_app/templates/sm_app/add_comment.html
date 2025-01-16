@@ -1,0 +1,17 @@
+{% extends "sm_app/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+ <h2>Comment</h2>
+{% endblock page_header %}
+{% block content %}
+ <p>Add comment:</p>
+   <form action="{% url 'sm_app:comment' post.id %}" method='post' class="form form-horizontal">
+   {% csrf_token %}
+   {% bootstrap_form  form %}
+
+   {% buttons %}
+   <button name='submit' class="btn btn-primary">Post</button>
+    {% endbuttons %}
+ </form>
+{% endblock content %}
