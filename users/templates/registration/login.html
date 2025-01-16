@@ -1,4 +1,4 @@
-{% extends "learning_logs/base.html" %}
+{% extends "sm_app/base.html" %}
 {% load bootstrap4 %}
 {% block page_header %}
 <h2>Log in to your account.</h2>
@@ -11,6 +11,6 @@
       <button name="submit" class="btn btn-primary">Log in</button>
     {% endbuttons %}
     <input type="hidden" name="next"
-      value="{% url 'learning_logs:index' %}" />
+      value="{% url 'sm_app:index' %}" />
   </form>
  {% endblock content %}

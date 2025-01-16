@@ -1,0 +1,26 @@
+{% extends "sm_app/base.html" %}
+
+{% block page_header %}
+{% if user.is_authenticated %}
+{% for post in posts %}
+    <div class="card mb-3">
+       <div class="card-header" style = "display: flex; justify-content: space-between">
+           <h4>{{ post.title }}</h4>
+           <h4>{{ post.user.username }}</h4>
+      </div>
+       <div class="card-body">
+        {{ post.content }}
+      </div>
+    </div>
+{% empty %}
+    <h4>Kinda calm in here, follow someone!</h4>
+{% endfor %}
+{% else %}
+<div class="jumbotron">
+<h1 class="display-3">Connect.</h1>
+    <p class="lead">Share thoughts, opinions, moments. With everyone you know. It's just one click away.</p>
+    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+        role="button">Register &raquo;</a>
+{% endif %}
+</div>
+{% endblock page_header %}

@@ -1,0 +1,16 @@
+
+{% extends 'sm_app/base.html' %}
+{% block page_header %}
+<h3>People you may know</h3>
+{% endblock page_header %}
+{% block content %}
+    {% for profile in profiles %}
+         <div class="card mb-3">
+           <div  class="card-body">
+            <p>{{ profile.username }}<p/>
+               <b>{{ profile.first_name }} {{ profile.last_name }}</b>
+               <button style='float: right' class="btn btn-primary">Follow</button>
+          </div>
+        </div>
+ {% endfor %}
+ {% endblock content %}
